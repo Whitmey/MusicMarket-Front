@@ -1,13 +1,11 @@
-<h1>Login</h1>
-{{#simple-form onsubmit=(action "authenticate") as |formValues|}}
-  {{input value=formValues.username placeholder="Username"}}
-  {{input type="password" value=formValues.password placeholder="Password"}}
+<form {{action (route-action 'authenticate' username password) on="submit"}}>
+  <label>Username</label>
+  {{input value=username type="text"}}
 
-  <button>Submit</button>
-{{/simple-form}}
+  <label>Password</label>
+  {{input value=password type="password"}}
 
-
-
-
+  <button type="submit" class="btn">Log in!</button>
+</form>
 
 {{yield}}

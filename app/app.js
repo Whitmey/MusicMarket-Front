@@ -1,5 +1,6 @@
 import Application from '@ember/application';
 import Resolver from './resolver';
+import Ember from 'ember';
 import loadInitializers from 'ember-load-initializers';
 import config from './config/environment';
 
@@ -10,5 +11,7 @@ const App = Application.extend({
 });
 
 loadInitializers(App, config.modulePrefix);
+
+Ember.deprecate = () => {};
 
 export default App;

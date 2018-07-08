@@ -14,13 +14,21 @@ module.exports = function(environment) {
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
         Date: false
-      }
+      },
+      LOG_STACKTRACE_ON_DEPRECATION: false
     },
 
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
     }
+  };
+
+  ENV['ember-simple-auth-token'] = {
+    serverTokenEndpoint: 'http://localhost:8000/login', // Server endpoint to send authenticate request
+    tokenPropertyName: 'AuthKey', // Key in server response that contains the access token
+    headers: {}, // Headers to add to the
+    refreshAccessTokens: false
   };
 
   if (environment === 'development') {
