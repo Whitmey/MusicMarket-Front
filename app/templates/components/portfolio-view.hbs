@@ -1,0 +1,10 @@
+<h1>Portfolio view</h1>
+{{#each portfolio.shares as |share|}}
+  <ul>
+    <li>ShareId: {{share.shareId}}</li>
+    <li>TrackName: {{share.trackName}}</li>
+    <li>Artist: {{share.artist}}</li>
+    <li>Profit: {{share.profitLoss}}</li>
+    <li>Quantity: {{share.quantity}}</li>
+  </ul>
+{{/each}}

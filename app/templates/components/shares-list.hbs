@@ -1,0 +1,11 @@
+<h1>Shares list</h1>
+{{#each shares as |share|}}
+  <ul>
+    <li>Id: {{share.id}}</li>
+    <li>Position: {{share.position}}</li>
+    <li>Name: {{share.trackname}}</li>
+    <li>Artist: {{share.artist}}</li>
+    <li>Streams: {{share.streams}}</li>
+    <li>Price: {{share.price}}</li>
+  </ul>
+{{/each}}

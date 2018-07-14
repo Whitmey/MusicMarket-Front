@@ -1,0 +1,14 @@
+<form {{action (route-action 'register' email password username) on="submit"}}>
+  <label>Email</label>
+  {{input value=email type="text"}}
+
+  <label>Password</label>
+  {{input value=password type="password"}}
+
+  <label>Username</label>
+  {{input value=username type="text"}}
+
+  <button type="submit" class="btn">Log in!</button>
+</form>
+
+{{yield}}

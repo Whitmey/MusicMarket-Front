@@ -24,10 +24,18 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['ember-simple-auth'] = {
+    authorizer: 'authorizer:jwt',
+    crossOriginWhitelist: ['*'],
+    routeAfterAuthentication: 'portfolio'
+  };
   ENV['ember-simple-auth-token'] = {
-    serverTokenEndpoint: 'http://localhost:8000/login', // Server endpoint to send authenticate request
-    tokenPropertyName: 'AuthKey', // Key in server response that contains the access token
-    headers: {}, // Headers to add to the
+    serverTokenEndpoint: 'http://localhost:8000/login',
+    identificationField: 'username',
+    passwordField: 'password',
+    tokenPropertyName: 'AuthKey',
+    authorizationHeaderName: 'AuthKey',
+    authorizationPrefix: '',
     refreshAccessTokens: false
   };
 
