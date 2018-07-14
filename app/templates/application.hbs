@@ -1,1 +1,14 @@
-{{outlet}}
+<div>
+  <header>
+  </header>
+  <div>
+    <nav class="mdl-navigation">
+      {{#link-to 'application'}}
+        Home
+      {{/link-to}}
+    </nav>
+  </div>
+  <main>
+    <div class="page-content">{{outlet}}</div>
+  </main>
+</div>
