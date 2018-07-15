@@ -1,12 +1,20 @@
-<h1>TRADE WITH
-DIGITAL CURRENCY</h1>
-{{#each shares as |share|}}
-  <ul>
-    <li>Id: {{share.id}}</li>
-    <li>Position: {{share.position}}</li>
-    <li>Name: {{share.trackname}}</li>
-    <li>Artist: {{share.artist}}</li>
-    <li>Streams: {{share.streams}}</li>
-    <li>Price: {{share.price}}</li>
-  </ul>
-{{/each}}
+<table>
+  <tr class="columns">
+    <th>Position</th>
+    <th>Name</th>
+    <th>Artist</th>
+    <th>Streams</th>
+    <th>Price</th>
+    <th>Trade</th>
+  </tr>
+  {{#each shares as |share|}}
+    <tr class="row">
+      <td>{{share.position}}</td>
+      <td>{{share.trackName}}</td>
+      <td>{{share.artist}}</td>
+      <td>{{share.streams}}</td>
+      <td>${{share.price}}</td>
+      <td>{{trade-dialog share=share}}</td>
+    </tr>
+  {{/each}}
+</table>

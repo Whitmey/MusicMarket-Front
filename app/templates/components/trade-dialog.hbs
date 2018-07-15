@@ -1,0 +1,14 @@
+<!-- <form {{action (route-action 'authenticate' username password) on="submit"}}> -->
+<button {{action "toggleModal"}} class="button-link">Trade</button>
+
+{{#liquid-if isShowingModal growDuration=500}}
+  {{#modal-dialog onClose="toggleModal"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+
+  <h3>Trade</h3>
+
+  {{/modal-dialog}}
+{{/liquid-if}}
+
+{{yield}}

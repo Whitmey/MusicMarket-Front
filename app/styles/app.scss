@@ -1,6 +1,10 @@
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
+
 @import './components/shares-list.scss';
 @import './components/login-form.scss';
 @import './components/portfolio-view.scss';
+@import './components/trade-dialog.scss';
 
 @import './routes/login.scss';
 @import './routes/portfolio.scss';

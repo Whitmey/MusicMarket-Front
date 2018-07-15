@@ -1,8 +1,12 @@
 .shares-page {
   position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .shares-list {
-    margin-top: 150px;
+    margin-top: 100px;
   }
 
 }
