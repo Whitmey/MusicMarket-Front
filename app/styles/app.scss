@@ -1,1 +1,76 @@
 @import './components/shares-list.scss';
+@import './components/login-form.scss';
+@import './components/portfolio-view.scss';
+
+@import './routes/login.scss';
+@import './routes/portfolio.scss';
+@import './routes/shares.scss';
+
+body {
+  font-family: "Whale Text", "Helvetica Neue", "Helvetica", Arial, sans-serif, serif;
+  background-color: #22242B;
+  color: #fff;
+  margin: 0px;
+}
+
+header {
+  width: 100%;
+  top: 0;
+  height: 70px;
+  background-color: #292c35;
+  z-index: 2;
+  position: fixed;
+
+  .logo {
+    float: left;
+    padding: 25px;
+    width: 197px;
+    height: 25px;
+    background-image: url(https://whaleclub.co/im/wc-logo-full.png);
+    background-size: 197px 25px;
+    background-repeat: no-repeat;
+    background-position: 25px 25px;
+    display: block;
+  }
+
+  .main-nav {
+    float: right;
+    padding: 25px;;
+    margin: 0px;
+
+    ul {
+      display: block;
+    }
+
+    li {
+      display: inline-block;
+      margin-left: 2.6rem;
+      text-transform: uppercase;
+
+      .regular-link {
+        font-size: 13.5px;
+        font-weight: 400;
+        letter-spacing: 1.25px;
+        line-height: 23.04px;
+        opacity: 0.85;
+        text-decoration: none;
+        color: #fff;
+        text-shadow: rgba(0, 0, 0, 0.05) 0px 0px 1px;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      .button-link {
+        padding: 10px 20px;
+        border-radius: 3px;
+        background-color: #0074db;
+
+        &:hover {
+          background-color: #0080f2;
+        }
+      }
+    }
+  }
+}

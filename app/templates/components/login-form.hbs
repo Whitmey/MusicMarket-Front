@@ -1,11 +1,11 @@
-<form {{action (route-action 'authenticate' username password) on="submit"}}>
-  <label>Username</label>
-  {{input value=username type="text"}}
+<div class="container">
+  <h3>Sign In</h3>
 
-  <label>Password</label>
-  {{input value=password type="password"}}
-
-  <button type="submit" class="btn">Log in!</button>
-</form>
+  <form {{action (route-action 'authenticate' username password) on="submit"}}>
+    {{input value=username type="text" placeholder="Username"}}
+    {{input value=password type="password" placeholder="Password"}}
+    <button type="submit" class="button-link">Sign In</button>
+  </form>
+</div>
 
 {{yield}}
