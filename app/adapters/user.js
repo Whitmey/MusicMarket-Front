@@ -1,9 +1,13 @@
-import DS from 'ember-data';
+import RESTAdapter from './application';
 
-export default DS.RESTAdapter.extend({
+export default RESTAdapter.extend({
 
   urlForCreateRecord() {
     return 'http://localhost:8000/register';
+  },
+
+  urlForQueryRecord(store, type, query) {
+    return 'http://localhost:8000/account';
   }
 
 });

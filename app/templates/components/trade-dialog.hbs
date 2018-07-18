@@ -3,10 +3,54 @@
 
 {{#liquid-if isShowingModal growDuration=500}}
   {{#modal-dialog onClose="toggleModal"
+                  containerClass="trade-dialog-container"
                   targetAttachment="center"
                   translucentOverlay=true}}
 
-  <h3>Trade</h3>
+  <div class="top-panel">
+    <div class="title">
+      {{share.trackName}} - {{share.artist}}
+    </div>
+    <div class="close-btn">
+      X
+    </div>
+  </div>
+
+  <div class="mid-panel">
+    <div class="details">
+      <div class="balance">
+        <span>Balance</span>
+        <span>${{account.balance}}.57</span>
+      </div>
+      <div class="owned">
+        <span>Owned</span>
+        <span>376</span>
+      </div>
+    </div>
+    <div class="quantity">
+      <span>Quantity</span>
+      {{input value=quantity placeholder="0" class="quantity-btn"}}
+    </div>
+  </div>
+
+  <div class="bottom-panel">
+    <div class="sell-btn">
+      <div class="title">
+        Sell
+      </div>
+      <div class="price">
+        {{share.price}}.00
+      </div>
+    </div>
+    <div class="buy-btn">
+      <div class="title">
+        Buy
+      </div>
+      <div class="price">
+        {{share.price}}.00
+      </div>
+    </div>
+  </div>
 
   {{/modal-dialog}}
 {{/liquid-if}}
