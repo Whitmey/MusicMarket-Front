@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('register');
   this.route('portfolio');
   this.route('shares');
+  this.route('leaderboards');
 });
 
 export default Router;
