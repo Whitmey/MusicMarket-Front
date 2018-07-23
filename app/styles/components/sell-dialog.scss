@@ -1,0 +1,130 @@
+.sell-dialog {
+
+}
+
+.sell-dialog-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 25%;
+  background-color: #fefefe;
+  box-shadow: none;
+  color: #444;
+
+  .top-panel {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    background: #ecedf1;
+    border-bottom: 1px solid #ddd;
+
+    .title {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 50px;
+      width: 100%;
+      text-transform: uppercase;
+    }
+
+    .close-btn {
+      top: 10px;
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      right: 10px;
+      transition: background .2s ease;
+      cursor: pointer;
+
+      &:hover {
+        background: rgba(0,0,0,.1);
+      }
+    }
+  }
+
+  .mid-panel {
+    display: flex;
+    flex-direction: column;
+
+    .details {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .box {
+      width: 50%;
+      padding: 15px;
+      text-align: center;
+
+      .label {
+        font-size: 10px;
+        font-weight: 600;
+      }
+      .value {
+        font-size: 20px;
+      }
+    }
+
+    .totalCost {
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      width: 90%;
+      border-top: 1px solid #ddd;
+    }
+
+    .quantity {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 0px 20px 20px 20px;
+      align-self: center;
+
+      input {
+        height: 40px;
+        line-height: 18px;
+        padding: 3px 10px 3px 10px;
+        text-align: center;
+        border: 1px solid #d3d4d9;
+        transition: border-color .2s ease;
+        box-sizing: border-box;
+        font-family: Lato,Open Sans,sans-serif;
+        font-size: 12px;
+        color: #3f3f3f;
+        outline: none;
+      }
+    }
+
+  }
+
+  .bottom-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+
+    a {
+      width: 50%;
+      font-size: 10px;
+      background-color: #00a7e1;
+      color: #fff;
+      font-weight: 600;
+      text-transform: uppercase;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      cursor: pointer;
+      transition: background .2s ease,opacity .2s ease;
+
+      &:hover {
+        background: #14c4ff;
+      }
+    }
+  }
+
+}
+
+
+.ember-modal-overlay.translucent {
+  background: rgba(0,0,0,0.5)
+}

@@ -1,13 +1,25 @@
 <h1>Portfolio view</h1>
-{{#each portfolio.shares as |share|}}
-  <ul>
-    <li>ShareId: {{share.shareId}}</li>
-    <li>TrackName: {{share.trackName}}</li>
-    <li>Artist: {{share.artist}}</li>
-    <li>Profit: {{share.profitLoss}}</li>
-    <li>Quantity: {{share.quantity}}</li>
-  </ul>
-{{/each}}
+<table>
+  <tr class="columns">
+    <th>ShareId</th>
+    <th>TrackName</th>
+    <th>Artist</th>
+    <th>Proft</th>
+    <th>Quantity</th>
+    <th>Sell</th>
+  </tr>
+  {{#each portfolio.shares as |share|}}
+    <tr class="row">
+      <td>{{share.id}}</td>
+      <td>{{share.trackName}}</td>
+      <td>{{share.artist}}</td>
+      <td>{{share.profitLoss}}</td>
+      <td>{{share.quantity}}</td>
+      <td>{{sell-dialog share=share}}</td>
+    </tr>
+  {{/each}}
+</table>
+
 
 <h3>Total portfolio value: {{portfolio.totalPortfolioValue}}</h3>
 <h3>Total profit: {{portfolio.totalProfitOrLoss}}</h3>

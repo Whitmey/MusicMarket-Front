@@ -27,33 +27,11 @@
   .row {
     height: 40px;
     border-bottom: 1px solid #1c1f25;
-    font-size: 13.5px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 23.04px;
     text-decoration: none;
     color: #fff;
-    text-shadow: rgba(0, 0, 0, 0.05) 0px 0px 1px;
-
-    .button-link {
-      text-transform: uppercase;
-      letter-spacing: 1.25px;
-      line-height: 20.04px;
-      opacity: 0.85;
-      border-color: #0074db;
-      cursor: pointer;
-      text-decoration: none;
-      color: #fff;
-      text-shadow: rgba(0, 0, 0, 0.05) 0px 0px 1px;
-      padding: 5px 10px;
-      border-radius: 3px;
-      background-color: #0074db;
-      outline: none;
-
-      &:hover {
-        background-color: #0080f2;
-        opacity: 1;
-      }
-    }
 
   }
 }

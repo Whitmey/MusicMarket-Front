@@ -12,28 +12,18 @@ export default Component.extend({
     return this.get('store').queryRecord('user', {});
   }),
 
-  holding: computed('share', 'isShowingModal', function() {
-    return this.get('store').queryRecord('share', {
-      trackName: this.get('share.trackName'),
-      artist: this.get('share.artist')
-    });
-  }),
-
   actions: {
     toggleModal: function() {
       this.toggleProperty('isShowingModal');
-      this.set('quantity', null);
+      this.set('quantity', null); // trigger on open, only make holding request on open as well!
     },
     buy: function() {
-      let trade = this.get('store').createRecord('share', {
+      let trade = this.get('store').createRecord('purchase', {
         trackName: this.get('share.trackName'),
         artist: this.get('share.artist'),
         quantity: this.get('quantity')
       });
       trade.save();
-    },
-    sell: function() {
-      // sell endpoint
     }
   }
 
