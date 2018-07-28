@@ -1,8 +1,9 @@
 <button {{action "toggleModal"}} class="button-link">Buy</button>
 
-{{#liquid-if isShowingModal growDuration=1000}}
+{{#liquid-if isShowingModal}}
   {{#modal-dialog onClose="toggleModal"
                   containerClass="buy-dialog-container"
+                  animatable=true
                   targetAttachment="center"
                   translucentOverlay=true}}
 
@@ -27,13 +28,13 @@
       </div>
       <div class="box">
         <div class="label">PRICE</div>
-        <div class="value">1231.<span>83</span></div>
+        <div class="value">{{share.price}}.<span>83</span></div>
       </div>
     </div>
     <div class="totalCost">
       <div class="box">
         <div class="label">TOTAL COST</div>
-        <div class="value">0.<span>00</span></div>
+        <div class="value">{{totalCost}}.<span>00</span></div>
       </div>
     </div>
     <div class="quantity">

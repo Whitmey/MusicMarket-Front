@@ -14,9 +14,9 @@
 
 body {
   font-family: "Open Sans";
-  background-color: #22242B;
+  background-color: #F2F2F2;
   font-weight: 600;
-  color: #fff;
+  color: #3f3f3f;
   margin: 0px;
 }
 
@@ -24,20 +24,29 @@ header {
   width: 100%;
   top: 0;
   height: 70px;
-  background-color: #292c35;
+  background-image: radial-gradient( circle farthest-corner at 12.3% 19.3%,  rgba(85,88,218,1) 0%, rgba(95,209,249,1) 100.2% );
+  // box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   z-index: 2;
   position: fixed;
 
   .logo {
     float: left;
     padding: 25px;
-    width: 197px;
-    height: 25px;
-    background-image: url(https://whaleclub.co/im/wc-logo-full.png);
-    background-size: 197px 25px;
+    width: 210px;
+    background-image: url(/assets/images/MMLogo.PNG);
+    // background-image: url(https://whaleclub.co/im/wc-logo-full.png);
+    background-size: 30px 16.5px;
     background-repeat: no-repeat;
-    background-position: 25px 25px;
+    background-position: 25px 27px;
     display: block;
+    text-align: right;
+    text-decoration: none;
+    color: #fff;
+    font-size: 21px;
+    line-height: 20px;
+    font-weight: 1;
+    letter-spacing: 1px;
   }
 
   .main-nav {

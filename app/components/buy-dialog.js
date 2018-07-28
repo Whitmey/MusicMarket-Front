@@ -12,6 +12,10 @@ export default Component.extend({
     return this.get('store').queryRecord('user', {});
   }),
 
+  totalCost: computed('share', 'quantity', function() {
+    return this.get('share.price') * this.get('quantity');
+  }),
+
   actions: {
     toggleModal: function() {
       this.toggleProperty('isShowingModal');

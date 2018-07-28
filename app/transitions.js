@@ -6,4 +6,8 @@ export default function(){
   //     this.use('toLeft'),
   //     this.reverse('toRight')
   //   );
+  this.transition(
+    this.hasClass('scale-demo'),
+    this.use('scale', { duration: 3000 })
+  );
 }
