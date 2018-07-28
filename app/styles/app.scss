@@ -93,6 +93,7 @@ header {
   text-transform: uppercase;
   line-height: 20px;
   border-color: #00a7e1;
+  border-radius: 3px;
   cursor: pointer;
   text-decoration: none;
   color: #fff;
@@ -104,6 +105,7 @@ header {
 
   &:hover {
     background: #14c4ff;
+    border-color: #14c4ff;
   }
 }
 

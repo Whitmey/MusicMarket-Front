@@ -6,6 +6,8 @@ export default DS.Model.extend({
   trackName: DS.attr(),
   artist: DS.attr(),
   streams: DS.attr(),
-  price: DS.attr()
+  price: DS.attr(),
+  change: DS.attr(),
+  changeAsPercent: DS.attr()
 
 });
