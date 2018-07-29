@@ -1,0 +1,13 @@
+.leaderboards-page {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .leaderboard-view {
+    margin-top: 150px;
+    width: 85%;
+  }
+
+}

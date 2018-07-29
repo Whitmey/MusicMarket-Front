@@ -2,9 +2,8 @@ import Component from '@ember/component';
 
 export default Component.extend({
 
-  classNames: [ 'portfolio-view' ],
+  classNames: [ 'leaderboard-view' ],
 
-  portfolio: null,
-  account: null
+  users: null
 
 });

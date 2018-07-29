@@ -1,0 +1,34 @@
+<!-- <div class="controls">
+  <div class="tabs">
+    {{#link-to 'shares'}}
+      All
+    {{/link-to}}
+    {{#link-to 'register'}}
+      Favorites
+    {{/link-to}}
+  </div>
+  <div class="search">
+    {{input value=searchWord placeholder="Search"}}
+  </div>
+</div> -->
+
+<div class="table-list">
+  <table>
+    <tr class="column">
+      <th></th>
+      <th>Username</th>
+      <th>Cash Balance</th>
+      <th>Portfolio Value</th>
+      <th>Profit</th>
+    </tr>
+    {{#each users as |user|}}
+      <tr class="row">
+        <td></td>
+        <td>{{user.username}}</td>
+        <td>{{money user.balance}}</td>
+        <td>{{money user.portfolioValue}}</td>
+        {{money-change user.profit 'td'}}
+      </tr>
+    {{/each}}
+  </table>
+</div>

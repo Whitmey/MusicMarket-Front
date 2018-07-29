@@ -3,6 +3,7 @@ import { htmlSafe } from '@ember/template';
 
 export function moneyChange(params/*, hash*/) {
   let cssClass = '';
+  let el = params[1];
   if (params[0] > 0) {
     cssClass = 'positive'
   }
@@ -21,7 +22,7 @@ export function moneyChange(params/*, hash*/) {
   let sign = '$';
 
   if (cents.toString().length === 1) { cents = '0' + cents; }
-  return new htmlSafe(`<td class="${cssClass}">${sign}${dollars}.${cents}</td>`);
+  return new htmlSafe(`<${el} class="${cssClass}">${sign}${dollars}.${cents}</${el}>`);
 }
 
 export default helper(moneyChange);

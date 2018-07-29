@@ -1,26 +1,45 @@
+<div class="top">
+  <div class="balance">
+    <h1>CURRENT BALANCE</h1>
+    <span>{{money account.balance}}</span>
+  </div>
+
+  <div class="portfolio-value">
+    <h1>PORTFOLIO VALUE</h1>
+    <span>{{money portfolio.totalPortfolioValue}}</span>
+  </div>
+
+  <div class="total-profit">
+    <h1>TOTAL PROFIT</h1>
+    {{money-change portfolio.totalProfitOrLoss 'span'}}
+  </div>
+</div>
+
 <div class="table-list">
   <table>
     <tr class="column">
-      <th>ShareId</th>
+      <th></th>
       <th>TrackName</th>
       <th>Artist</th>
-      <th>Proft</th>
+      <th>Buy Price</th>
+      <th>Current Price</th>
+      <th>Profit</th>
+      <th>Change %</th>
       <th>Quantity</th>
-      <th>Sell</th>
+      <th></th>
     </tr>
     {{#each portfolio.shares as |share|}}
       <tr class="row">
-        <td>{{share.id}}</td>
+        <td></td>
         <td>{{share.trackName}}</td>
         <td>{{share.artist}}</td>
-        <td>{{share.profitLoss}}</td>
+        <td>{{money share.price}}</td>
+        <td>{{money share.currentPrice}}</td>
+        {{money-change share.profitLoss 'td'}}
+        <td></td>
         <td>{{share.quantity}}</td>
         <td>{{sell-dialog share=share}}</td>
       </tr>
     {{/each}}
   </table>
 </div>
-
-
-<h3>Total portfolio value: {{portfolio.totalPortfolioValue}}</h3>
-<h3>Total profit: {{portfolio.totalProfitOrLoss}}</h3>

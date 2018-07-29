@@ -4,31 +4,39 @@
       MUSICMARKETS
     </a>
     <ul class="main-nav">
-  		<li>
-        {{#link-to 'shares' class='regular-link'}}
-          Market
-        {{/link-to}}
-  		</li>
-      <li>
-        {{#link-to 'leaderboards' class='regular-link'}}
-          Leaderboard
-        {{/link-to}}
-      </li>
-  		<li>
-        {{#link-to 'portfolio' class='regular-link'}}
-          Account
-        {{/link-to}}
-  		</li>
-      <li>
-        {{#link-to 'register' class='regular-link'}}
-          Register
-        {{/link-to}}
-      </li>
-  		<li>
-        {{#link-to 'login' class='regular-link button-link'}}
-          Sign in
-        {{/link-to}}
-  		</li>
+      {{#if session.isAuthenticated}}
+        <li>
+          {{#link-to 'shares' class='regular-link'}}
+            Market
+          {{/link-to}}
+        </li>
+        <li>
+          {{#link-to 'leaderboards' class='regular-link'}}
+            Leaderboard
+          {{/link-to}}
+        </li>
+        <li>
+          {{#link-to 'portfolio' class='regular-link'}}
+            Account
+          {{/link-to}}
+        </li>
+        <li>
+          {{#link-to 'login' class='regular-link button-link'}}
+            Log out
+          {{/link-to}}
+        </li>
+      {{else}}
+        <li>
+          {{#link-to 'register' class='regular-link'}}
+            Register
+          {{/link-to}}
+        </li>
+        <li>
+          {{#link-to 'login' class='regular-link button-link'}}
+            Sign in
+          {{/link-to}}
+        </li>
+      {{/if}}
   	</ul>
   </header>
   <main>

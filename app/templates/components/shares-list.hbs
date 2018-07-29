@@ -31,7 +31,7 @@
         <td>{{share.artist}}</td>
         <td>{{share.streams}}</td>
         <td>{{money share.price}}</td>
-        {{money-change share.change}}
+        {{money-change share.change 'td'}}
         {{percent-change share.changeAsPercent}}
         <td>
           {{buy-dialog share=share}}
