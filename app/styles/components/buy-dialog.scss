@@ -13,6 +13,21 @@
     }
 }
 
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -35
+  }
+  to {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -124
+  }
+}
+
 .buy-dialog-container {
   display: flex;
   flex-direction: column;
@@ -115,7 +130,7 @@
     align-items: center;
     padding-bottom: 15px;
 
-    a {
+    button, div {
       width: 50%;
       font-size: 10px;
       background-color: #00a7e1;
@@ -127,9 +142,39 @@
       text-align: center;
       cursor: pointer;
       transition: background .2s ease,opacity .2s ease;
+      border-width: 0;
+      &:focus {
+        outline: 0;
+      }
+
+      #platform-loader-icon {
+        padding-top: 5px;
+        width: 30px;
+        height: 30px;
+        .loader-path-static {
+          stroke: hsla(0,0%,100%,.3);
+        }
+        .loader-path {
+          stroke: #fff;
+          stroke-dasharray: 50,200;
+          stroke-dashoffset: 0;
+          animation: dash 1.5s ease-in-out infinite;
+          stroke-linecap: round;
+        }
+      }
 
       &:hover {
         background: #14c4ff;
+      }
+    }
+
+    div {
+      cursor: default;
+      &:hover {
+        background: #00a7e1;
+      }
+      iframe {
+        padding-top: 5px;
       }
     }
   }
@@ -139,4 +184,200 @@
 
 .ember-modal-overlay.translucent {
   background: rgba(0,0,0,0.5)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$progress: #28e0da;
+$success: #1df295;
+
+$ease: cubic-bezier(.39,0,.41,1);
+$out: cubic-bezier(0,0,.23,1);
+$in: cubic-bezier(.71,.01,.91,.99);
+
+.frame {
+	display: flex;
+	height: 10vh; //////////
+	overflow: hidden;
+	align-items: center;
+	justify-content: center;
+}
+
+.loader {
+	height: 1.5vw; /////////////
+	width: 1.5vw; //////////
+	cursor: pointer;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: inset 0 0 0 0.25vw rgba(black,.03); /////////
+	outline: none;
+	position: relative;
+
+	.line {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		overflow: hidden;
+
+		animation: rotate 1.5s $ease forwards infinite;
+
+		@keyframes rotate {
+			to {
+				transform: rotate(180deg);
+			}
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom:0;
+			border-radius: 50%;
+			transition: 1s $out, opacity 0s;
+			border: 0.25vw solid transparent; ////////////
+			transform: rotate(-45deg);
+
+			@keyframes line {
+				45%,55% {
+					transform: rotate(135deg);
+				}
+				100% {
+					transform: rotate(315deg);
+				}
+			}
+		}
+
+		&:first-of-type {
+			transform-origin: left center;
+			left: 50%;
+			right: 0;
+
+			&:before {
+				left: -100%;
+				right: 0;
+				border-top-color: $progress;
+				border-left-color: $progress;
+				animation: line 1.5s $ease forwards infinite;
+			}
+		}
+
+		&:last-of-type {
+			right: 50%;
+			left: 0;
+			transform-origin: right center;
+
+			&:before {
+				right: -100%;
+				left: 0;
+				opacity: 0;
+				border-bottom-color: $progress;
+				border-right-color: $progress;
+				// animation: line 2s forwards infinite;
+			}
+		}
+	}
+}
+
+.complete {
+	animation: success 1s $out forwards 1.1s;
+
+	@keyframes success {
+		0% {
+			box-shadow: inset 0 0 0 1vw rgba(black,.03), 0 0 0 0 $success,0 0 0 0 $success;
+		}
+		100% {
+			box-shadow: inset 0 0 0 1vw $success, 0 0 0 52vw $success, 0 0 0 52vh $success;
+		}
+	}
+
+	.line:first-of-type {
+
+		&:before {
+			animation: none;
+			opacity: 1;
+			transform: rotate(135deg);
+			border-top-color: $success;
+			border-left-color: $success;
+		}
+	}
+
+	.line:last-of-type {
+
+		&:before {
+			opacity: 1;
+			transform: rotate(135deg);
+			border-bottom-color: $success;
+			border-right-color: $success;
+		}
+	}
+
+	.tick {
+		animation: tick 1s $out forwards .5s;
+
+		@keyframes tick {
+			0% {
+				transform: translate3d(-50%,-70%,0) rotate(-40deg);
+			}
+			50% {
+				transform: translate3d(-50%,0%,0) rotate(-40deg);
+			}
+			100% {
+				transform: translate3d(-50%,-50%,0) rotate(-45deg);
+			}
+		}
+
+		&:before,
+		&:after {
+			transform: scale3d(1,1,1);
+		}
+	}
+
+}
+
+
+.tick {
+	position: absolute;
+	top: 47%;
+	left: 50%;
+	transform: translate3d(-50%,-50%,0) rotate(-45deg);
+	width: 34%;
+	height: 15%;
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		background: $success;
+	}
+
+	&:before {
+		top: 0;
+		left: 0;
+		width: 1vw;
+		bottom: 0;
+		transform-origin: top;
+		transform: scale3d(1,0,1);
+		transition: .4s $ease .6s;
+	}
+
+	&:after {
+		right: 0;
+		left: 0;
+		height: 1vw;
+		bottom: 0;
+		transform-origin: left;
+		transform: scale3d(0,1,1);
+		transition: .8s $out 1s;
+	}
 }

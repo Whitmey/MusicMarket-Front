@@ -6,6 +6,9 @@
     <ul class="main-nav">
       {{#if session.isAuthenticated}}
         <li>
+          {{balance-view}}
+        </li>
+        <li>
           {{#link-to 'shares' class='regular-link'}}
             Market
           {{/link-to}}

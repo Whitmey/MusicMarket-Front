@@ -4,6 +4,8 @@ import { inject as service } from '@ember/service';
 
 export default Component.extend({
 
+  classNames: [ 'balance-view' ],
+
   store: service('store'),
 
   account: computed(function() {

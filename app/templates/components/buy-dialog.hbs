@@ -24,17 +24,17 @@
     <div class="details">
       <div class="box">
         <div class="label">CASH</div>
-        <div class="value">{{account.balance}}.<span>83</span></div>
+        <div class="value">{{money account.balance}}</div>
       </div>
       <div class="box">
         <div class="label">PRICE</div>
-        <div class="value">{{share.price}}.<span>83</span></div>
+        <div class="value">{{money share.price}}</div>
       </div>
     </div>
     <div class="totalCost">
       <div class="box">
         <div class="label">TOTAL COST</div>
-        <div class="value">{{totalCost}}.<span>00</span></div>
+        <div class="value">{{money totalCost}}</div>
       </div>
     </div>
     <div class="quantity">
@@ -43,9 +43,25 @@
   </div>
 
   <div class="bottom-panel">
-    <a {{action "buy"}}>
-      CONFIRM BUY
-    </a>
+    {{#if loading}}
+      <div type="button">
+        <svg id="platform-loader-icon" viewBox="25 25 50 50">
+          <circle class="loader-path-static" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>
+          <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>
+        </svg>
+      </div>
+    {{else if displaySuccess}}
+      <div class="frame">
+        <div class={{if displaySuccess 'complete loader' 'loader'}}>
+          <div class="line"></div>
+          <div class="line"></div><span class="tick"></span>
+        </div>
+      </div>
+    {{else}}
+      <button type="button" {{action "buy"}}>
+        CONFIRM BUY
+      </button>
+    {{/if}}
   </div>
 
   {{/modal-dialog}}

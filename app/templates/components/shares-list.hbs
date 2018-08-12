@@ -29,7 +29,7 @@
         <td>{{share.position}}</td>
         <td>{{share.trackName}}</td>
         <td>{{share.artist}}</td>
-        <td>{{share.streams}}</td>
+        <td>{{number-format share.streams}}</td>
         <td>{{money share.price}}</td>
         {{money-change share.change 'td'}}
         {{percent-change share.changeAsPercent}}
